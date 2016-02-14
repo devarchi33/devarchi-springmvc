@@ -15,13 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>인사말: ${greeting}</h1>
-    <form action="/member" method="post">
-        이메일: <input type="text" name="email"/>
-        이름: <input type="text" name="name"/>
-        암호: <input type="text" name="pass"/>
-        암호확인: <input type="text" name="confirmPass"/>
-        <input type="submit" value="확인">
+    <h1>인사말: ${member}</h1>
     </form>
 </div>
 </body>
