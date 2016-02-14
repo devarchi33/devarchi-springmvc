@@ -19,13 +19,13 @@ public class HelloController {
 
     @RequestMapping(value = "/member")
     public String member(Model model,
-                         MemberJoinRequest request) {
-        System.out.println("Email: " + request.getEmail());
-        System.out.println("Name: " + request.getName());
-        System.out.println("Pass: " + request.getPass());
-        System.out.println("Confirm Pass: " + request.getConfirmPass());
+                         MemberJoinRequest memberJoinRequest) {
+        System.out.println("Email: " + memberJoinRequest.getEmail());
+        System.out.println("Name: " + memberJoinRequest.getName());
+        System.out.println("Pass: " + memberJoinRequest.getPass());
+        System.out.println("Confirm Pass: " + memberJoinRequest.getConfirmPass());
 
-        model.addAttribute("member", "회원가입!");
+        model.addAttribute("member", "회원가입이 성공 하였습니다!");
         return "member";
     }
 }
