@@ -29,6 +29,7 @@
     "tests"
   ],
   "dependencies": {
-    "bootstrap": "^3.3.6"
+    "bootstrap": "^3.3.6",
+    "AdminLTE": "adminlte#^2.3.2"
   }
 }
