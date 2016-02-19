@@ -1,8 +1,11 @@
 package com.devarchi.web.controller;
 
 import com.devarchi.web.command.MemberJoinRequest;
+import com.devarchi.web.validator.MemberJoinValidator;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
@@ -19,7 +22,15 @@ public class HelloController {
 
     @RequestMapping(value = "/member")
     public String member(Model model,
-                         MemberJoinRequest memberJoinRequest) {
+                         @ModelAttribute("memberJoin") MemberJoinRequest memberJoinRequest,
+                         BindingResult bindingResult) {
+        new MemberJoinValidator().validate(memberJoinRequest, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            model.addAttribute("member", "회원가입이 실패 하였습니다!");
+            return "member";
+        }
+
         System.out.println("Email: " + memberJoinRequest.getEmail());
         System.out.println("Name: " + memberJoinRequest.getName());
         System.out.println("Pass: " + memberJoinRequest.getPass());

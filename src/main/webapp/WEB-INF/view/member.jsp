@@ -15,7 +15,7 @@
 </head>
 <body>
 <div class="container">
-    <h1>${memberJoinRequest.name}님의 ${member}</h1>
+    <h1>${memberJoin.name}님의 ${member}</h1>
     </form>
 </div>
 </body>
